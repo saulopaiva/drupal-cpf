@@ -1,0 +1,13 @@
+mask_plugin:
+  version: "v1.14.10"
+  js:
+    js/jquery.mask.min.js: { minified: true }
+  dependencies:
+    - core/jquery
+
+cpf:
+  version: 1.x
+  js:
+    js/cpf.js: {}
+  dependencies:
+    - core/drupalSettings

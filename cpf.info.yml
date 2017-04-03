@@ -1,0 +1,8 @@
+name: Brazilizan CPF
+type: module
+description: 'Defines field types for Brazilian CPF.'
+package: Field types
+core: 8.x
+dependencies:
+  - field
+  - filter
