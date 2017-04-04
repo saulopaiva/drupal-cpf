@@ -27,7 +27,7 @@ use Drupal\cpf\Plugin\Validation\Constraint\CpfValueConstraint;
  *   label = @Translation("CPF"),
  *   description = @Translation("This field stores a CPF number"),
  *   default_widget = "cpf_with_mask",
- *   default_formatter = "cpf_default"
+ *   default_formatter = "cpf_mask"
  * )
  */
 class CpfItem extends FieldItemBase {
