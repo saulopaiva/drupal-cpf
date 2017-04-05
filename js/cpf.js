@@ -21,7 +21,7 @@
         for (var element in generator.elements) {
           if (generator.elements[element].id.length) {
             // Bindes the click event to the cpf number generation link.
-            $('#' + generator.elements[element].id, context).on('click', function(e) {
+            $('#' + generator.elements[element].id, context).on('click', function (e) {
               e.preventDefault();
 
               // Retrieves the target input ID attribute.
@@ -41,16 +41,18 @@
         }
       }
     },
-    generate: function() {
+    generate: function () {
       // Randomly generates the first nine digits of the CPF number
       var n = [rand(), rand(), rand(), rand(), rand(), rand(), rand(), rand(), rand()];
 
       // Calculates the second check digit.
-      n[9] = n[8]*2 + n[7]*3 + n[6]*4 + n[5]*5 + n[4]*6 + n[3]*7 + n[2]*8 + n[1]*9 + n[0]*10;
+      n[9] = n[8] * 2 + n[7] * 3 + n[6] * 4 + n[5] * 5 + n[4] * 6 + n[3] * 7;
+      n[9] += n[2 ]* 8 + n[1] * 9 + n[0] * 10;
       n[9] = adjust_digit(n[9]);
 
       // Calculates the second check digit and returns de CPF number.
-      n[10] = n[9]*2 + n[8]*3 + n[7]*4 + n[6]*5 + n[5]*6 + n[4]*7 + n[3]*8 + n[2]*9 + n[1]*10 + n[0]*11;
+      n[10] = n[9] * 2 + n[8] * 3 + n[7] * 4 + n[6] * 5 + n[5] * 6 + n[4] * 7;
+      n[10] += n[3] * 8 + n[2] * 9 + n[1] * 10 + n[0] * 11;
       n[10] = adjust_digit(n[10]);
 
       return n.join('');

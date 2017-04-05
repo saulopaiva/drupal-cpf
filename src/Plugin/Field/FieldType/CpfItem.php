@@ -23,14 +23,8 @@ use Drupal\Core\TypedData\TypedDataInterface;
  */
 class CpfItem extends FieldItemBase {
 
-  /**
-   * @var int Specifies whether the field has only unique values.
-   */
   const UNIQUE_VALUES = 0x01;
 
-  /**
-   * @var int Specifies whether the field can have equal values.
-   */
   const SAME_VALUES = 0x10;
 
   public $cpfService = NULL;
