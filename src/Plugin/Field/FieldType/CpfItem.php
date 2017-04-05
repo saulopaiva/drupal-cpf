@@ -2,18 +2,13 @@
 
 namespace Drupal\cpf\Plugin\Field\FieldType;
 
-use Drupal\Component\Utility\Random;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemBase;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\TypedData\DataDefinition;
 use Drupal\Core\TypedData\DataDefinitionInterface;
 use Drupal\Core\TypedData\TypedDataInterface;
-use Drupal\cpf\CpfItemInterface;
-use Drupal\cpf\Plugin\Validation\Constraint\CpfUniqueConstraint;
-use Drupal\cpf\Plugin\Validation\Constraint\CpfValueConstraint;
 
 /**
  * Plugin implementation of the 'cpf' field type.
@@ -27,24 +22,25 @@ use Drupal\cpf\Plugin\Validation\Constraint\CpfValueConstraint;
  * )
  */
 class CpfItem extends FieldItemBase {
-   /**
-   * Specifies whether the field has only unique values..
+
+  /**
+   * @var int Specifies whether the field has only unique values.
    */
   const UNIQUE_VALUES = 0x01;
 
   /**
-   * Specifies whether the field can have equal values.
+   * @var int Specifies whether the field can have equal values.
    */
   const SAME_VALUES = 0x10;
 
-  public $cpf_service = NULL;
+  public $cpfService = NULL;
 
   /**
    * {@inheritdoc}
    */
   public function __construct(DataDefinitionInterface $definition, $name = NULL, TypedDataInterface $parent = NULL) {
     parent::__construct($definition, $name, $parent);
-    $this->cpf_service = \Drupal::service('cpf');
+    $this->cpfService = \Drupal::service('cpf');
   }
 
   /**
@@ -158,7 +154,7 @@ class CpfItem extends FieldItemBase {
    */
   public function isEmpty() {
     $value = $this->get('value')->getValue();
-    $value = $this->cpf_service->digits($value);
+    $value = $this->cpfService->digits($value);
     return empty($value);
   }
 
@@ -167,7 +163,8 @@ class CpfItem extends FieldItemBase {
    */
   public function setValue($values, $notify = TRUE) {
     // Remove all characters except numbers.
-    $values['value'] = $this->cpf_service->digits($values['value']);
+    $values['value'] = $this->cpfService->digits($values['value']);
     parent::setValue($values, $notify);
   }
+
 }
