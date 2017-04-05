@@ -8,6 +8,7 @@
 namespace Drupal\cpf;
 
 class CpfService {
+
   /**
    * Checks if the value you entered is a valid CPF number.
    *
@@ -32,7 +33,6 @@ class CpfService {
 
     $value = $this->digits($value);
 
-    // Valida tamanho
     if (strlen($value) != 11 || in_array($value, $invalids)) {
       return FALSE;
     }
@@ -70,15 +70,17 @@ class CpfService {
       rand(0, 9),
     ];
 
-    $n[9] = $n[8]*2 + $n[7]*3 + $n[6]*4 + $n[5]*5 + $n[4]*6 + $n[3]*7 + $n[2]*8 + $n[1]*9 + $n[0]*10;
+    $n[9] = $n[8] * 2 + $n[7] * 3 + $n[6] * 4 + $n[5] * 5 + $n[4] * 6;
+    $n[9] += $n[3] * 7 + $n[2] * 8 + $n[1] * 9 + $n[0] * 10;
     $n[9] = 11 - ($n[9] % 11);
     $n[9] = $n[9] >= 10 ? 0 : $n[9];
 
-    $n[10] = $n[9]*2 + $n[8]*3 + $n[7]*4 + $n[6]*5 + $n[5]*6 + $n[4]*7 + $n[3]*8 + $n[2]*9 + $n[1]*10 + $n[0]*11;
+    $n[10] = $n[9] * 2 + $n[8] * 3 + $n[7] * 4 + $n[6] * 5 + $n[5] * 6;
+    $n[10] += $n[4] * 7 + $n[3] * 8 + $n[2] * 9 + $n[1] * 10 + $n[0] * 11;
     $n[10] = 11 - ($n[10] % 11);
     $n[10] = $n[10] >= 10 ? 0 : $n[10];
 
-    $cpf =  join('', $n);
+    $cpf =  implode('', $n);
     return $cpf;
   }
 
