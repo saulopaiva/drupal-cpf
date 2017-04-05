@@ -1,7 +1,7 @@
 mask_plugin:
   version: "v1.14.10"
   js:
-    js/jquery.mask.min.js: { minified: true }
+    js/jquery.mask.js: {}
   dependencies:
     - core/jquery
 
