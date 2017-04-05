@@ -2,8 +2,7 @@
 
 /**
  * @file
- *  provides a CPF Field Type and a CPF Form Element for storing CPF number
- * data.
+ * Provides a CPF Field Type and a CPF Form Element for storing CPF number data.
  */
 
 /**
