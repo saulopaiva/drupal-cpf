@@ -1,12 +1,10 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\cpf\CpfService.
- */
-
 namespace Drupal\cpf;
 
+/**
+ * Defines the CpfService service, for CPF module.
+ */
 class CpfService {
 
   /**
@@ -16,6 +14,8 @@ class CpfService {
    *   The value of the CPF number.
    *
    * @return bool
+   *   Returns TRUE if the value entered is a valid CPF number. Otherwise,
+   *   returns FALSE.
    */
   public function isValid($value) {
     $invalids = [
@@ -80,7 +80,7 @@ class CpfService {
     $n[10] = 11 - ($n[10] % 11);
     $n[10] = $n[10] >= 10 ? 0 : $n[10];
 
-    $cpf =  implode('', $n);
+    $cpf = implode('', $n);
     return $cpf;
   }
 
@@ -111,6 +111,5 @@ class CpfService {
 
     return $masked_value;
   }
-
 
 }
