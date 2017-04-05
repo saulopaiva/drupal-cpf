@@ -3,7 +3,6 @@
 namespace Drupal\cpf\Plugin\Validation\Constraint;
 
 use Symfony\Component\Validator\Constraint;
-use Drupal\cpf\Plugin\Validation\Constraint\CpfValueConstraintValidator;
 
 /**
  * Supports validating CPF numbers.
@@ -14,6 +13,7 @@ use Drupal\cpf\Plugin\Validation\Constraint\CpfValueConstraintValidator;
  * )
  */
 class CpfValueConstraint extends Constraint {
+
   public $message = 'The CPF number %value is not valid';
 
   /**
@@ -22,4 +22,5 @@ class CpfValueConstraint extends Constraint {
   public function validatedBy() {
     return '\Drupal\cpf\Plugin\Validation\Constraint\CpfValueConstraintValidator';
   }
+
 }
