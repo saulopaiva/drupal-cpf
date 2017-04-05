@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\cpf\Plugin\Field\FieldType\CpfItem.
- */
-
 namespace Drupal\cpf\Plugin\Field\FieldType;
 
 use Drupal\Component\Utility\Random;

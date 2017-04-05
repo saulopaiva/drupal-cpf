@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\cpf\Plugin\Field\FieldFormatter\CpfMaskFormatter.
- */
-
 namespace Drupal\cpf\Plugin\Field\FieldFormatter;
 
 use Drupal\Component\Utility\Html;

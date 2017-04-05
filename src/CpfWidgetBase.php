@@ -28,7 +28,6 @@ class CpfWidgetBase extends WidgetBase {
    *
    * @return string
    *   The element ID.
-   *
    */
   public function formElementId(array $element) {
     $field_name = $this->fieldDefinition->getName();

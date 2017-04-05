@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\cpf\Plugin\Validation\Constraint\CpfValueConstraintValidator.
- */
-
 namespace Drupal\cpf\Plugin\Validation\Constraint;
 
 use Drupal\Component\Utility\Unicode;

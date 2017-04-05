@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\cpf\Plugin\Field\FieldWidget\CpfWithMaskWidget.
- */
-
 namespace Drupal\cpf\Plugin\Field\FieldWidget;
 
 use Drupal\Core\Field\FieldItemListInterface;
@@ -42,34 +37,27 @@ class CpfWithMaskWidget extends CpfWidgetBase {
   public function settingsForm(array $form, FormStateInterface $form_state) {
     $elements = [];
 
-    $elements['size'] = array(
+    $elements['size'] = [
       '#type' => 'number',
       '#title' => $this->t('Size of textfield'),
       '#default_value' => $this->getSetting('size'),
       '#required' => TRUE,
       '#min' => 1,
-    );
+    ];
 
-    $elements['placeholder'] = array(
+    $elements['placeholder'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Placeholder'),
       '#default_value' => $this->getSetting('placeholder'),
       '#description' => $this->t('Text that will be shown inside the field until a value is entered. This hint is usually a sample value or a brief description of the expected format.'),
-    );
+    ];
 
-    /*$elements['mask'] = [
-      '#type' => 'textfield',
-      '#title' => t('Mask'),
-      '#default_value' => $this->getSetting('mask'),
-      '#description' => $this->t('Add mask.'),
-    ];*/
-
-    $elements['generator'] = array(
+    $elements['generator'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Enable link to generate CPF numbers.'),
       '#default_value' => $this->getSetting('generator'),
       '#description' => $this->t('If enabled, a link will be added allowing you to generate a valid CPF number. <br/><strong>Note that to view the link the user must have the permission "Access the CPF number generator"</strong>.'),
-    );
+    ];
 
     return $elements;
   }
@@ -80,20 +68,20 @@ class CpfWithMaskWidget extends CpfWidgetBase {
   public function settingsSummary() {
     $summary = [];
 
-    $summary[] = $this->t('Textfield size: @size', array('@size' => $this->getSetting('size')));
+    $summary[] = $this->t('Textfield size: @size', ['@size' => $this->getSetting('size')]);
 
     $placeholder = $this->getSetting('placeholder');
     if (!empty($placeholder)) {
-      $summary[] = $this->t('Placeholder: @placeholder', array('@placeholder' => $placeholder));
+      $summary[] = $this->t('Placeholder: @placeholder', ['@placeholder' => $placeholder]);
     }
 
     $mask = $this->getSetting('mask');
     if (!empty($mask)) {
-      $summary[] = $this->t('Mask: @mask', array('@mask' => $mask));
+      $summary[] = $this->t('Mask: @mask', ['@mask' => $mask]);
     }
 
     $generator = empty($this->getSetting('generator')) ? $this->t('no') : $this->t('yes');
-    $summary[] = $this->t('Link to generate CPF numbers: @generator', array('@generator' => $generator));
+    $summary[] = $this->t('Link to generate CPF numbers: @generator', ['@generator' => $generator]);
 
     return $summary;
   }
@@ -131,7 +119,7 @@ class CpfWithMaskWidget extends CpfWidgetBase {
         [
           get_called_class(),
           'validateElement',
-        ]
+        ],
       ],
     ];
 

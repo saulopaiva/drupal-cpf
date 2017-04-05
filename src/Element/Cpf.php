@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\cpf\Element\Cpf.
- */
-
 namespace Drupal\cpf\Element;
 
 use Drupal\Core\Form\FormStateInterface;
@@ -16,10 +11,10 @@ use Drupal\Core\Render\Element\FormElement;
  *
  * Example usage:
  * @code
- * $form['cpf'] = array(
+ * $form['cpf'] = [
  *   '#type' => 'cpf',
  *   '#title' => $this->t('CPF number'),
- * );
+ * ];
  * @end
  *
  * @see \Drupal\Core\Render\Element\Render\Textfield
@@ -79,7 +74,8 @@ class Cpf extends FormElement {
   /**
    * Form element validation handler for #type 'cpf'.
    *
-   * Note that #maxlength and #required is validated by _form_validate() already.
+   * Note that #maxlength and #required is validated by _form_validate()
+   * already.
    */
   public static function validateCpf(&$element, FormStateInterface $form_state, &$complete_form) {
     $value = trim($element['#value']);
@@ -101,7 +97,7 @@ class Cpf extends FormElement {
    * @return array
    *   The $element with prepared variables ready for input.html.twig.
    */
-  public static function preRenderCpf($element) {
+  public static function preRenderCpf(array $element) {
     $element['#attributes']['type'] = 'cpf';
 
     $element['#maxlength'] = $element['#mask'] ? self::MAX_LENGTH_CANONICAL_MASK : self::MAX_LENGTH_DIGITS_MASK;
@@ -119,8 +115,10 @@ class Cpf extends FormElement {
       'drupalSettings' => $data,
     ];
 
-    Element::setAttributes($element, ['id', 'name', 'value', 'size', 'maxlength', 'placeholder']);
+    $attributes = ['id', 'name', 'value', 'size', 'maxlength', 'placeholder'];
+    Element::setAttributes($element, $attributes);
     static::setAttributes($element, ['form-cpf']);
+
     return $element;
   }
 

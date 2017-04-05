@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\cpf\Plugin\Validation\Constraint\CpfValueConstraint.
- */
-
 namespace Drupal\cpf\Plugin\Validation\Constraint;
 
 use Symfony\Component\Validator\Constraint;
