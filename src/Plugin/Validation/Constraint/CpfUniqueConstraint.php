@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Contains \Drupal\cpf\Plugin\Validation\Constraint\CpfUniqueConstraint.
@@ -8,6 +9,7 @@ namespace Drupal\cpf\Plugin\Validation\Constraint;
 
 use Symfony\Component\Validator\Constraint;
 use Drupal\cpf\Plugin\Validation\Constraint\CpfUniqueConstraintValidator;
+
 /**
  * Supports validating CPF numbers.
  *

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Contains \Drupal\cpf\CpfService.
@@ -26,7 +27,7 @@ class CpfService {
       '66666666666',
       '77777777777',
       '88888888888',
-      '99999999999'
+      '99999999999',
     ];
 
     $value = $this->digits($value);
