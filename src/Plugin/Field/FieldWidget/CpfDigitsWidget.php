@@ -89,7 +89,7 @@ class CpfDigitsWidget extends CpfWidgetBase {
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $value = isset($items[$delta]->value) ? $items[$delta]->value : '';
-    $element_id = $this->formElementID($element);
+    $element_id = $this->formElementId($element);
 
     $data['cpf']['mask_plugin']['elements'][$element_id] = [
       'id' => $element_id,

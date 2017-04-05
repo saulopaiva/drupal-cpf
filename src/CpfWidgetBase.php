@@ -20,7 +20,7 @@ class CpfWidgetBase extends WidgetBase {
     return $element;
   }
 
-  public function formElementID(array $element) {
+  public function formElementId(array $element) {
     $field_name = $this->fieldDefinition->getName();
     $field_name = strtolower(str_replace('_', '-', $field_name));
     $element_id = 'edit-' . $field_name . '-' . $element['#delta'] . '-value';
