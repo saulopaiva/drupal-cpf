@@ -20,6 +20,16 @@ class CpfWidgetBase extends WidgetBase {
     return $element;
   }
 
+  /**
+   * Returns the element ID.
+   *
+   * @param array $element
+   *   A form element array containing basic properties for the widget.
+   *
+   * @return string
+   *   The element ID.
+   *
+   */
   public function formElementId(array $element) {
     $field_name = $this->fieldDefinition->getName();
     $field_name = strtolower(str_replace('_', '-', $field_name));
@@ -31,7 +41,8 @@ class CpfWidgetBase extends WidgetBase {
   /**
    * Form element validation handler for the 'cpf' element.
    *
-   * Checks that, in a field with multiple entries, the same CPF numbers have been entered.
+   * Checks that, in a field with multiple entries, the same CPF numbers have
+   * been entered.
    */
   public function validateElement($element, FormStateInterface $form_state, $form) {
     $element_value = $element['#value'];
