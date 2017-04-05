@@ -109,7 +109,6 @@ class Cpf extends FormElement {
 
     $element['#attached'] = [
       'library' => [
-        'cpf/mask_plugin',
         'cpf/cpf',
       ],
       'drupalSettings' => $data,

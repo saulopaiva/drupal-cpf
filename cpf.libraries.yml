@@ -1,13 +1,17 @@
 mask_plugin:
-  version: "v1.14.10"
+  remote: https://igorescobar.github.io/jQuery-Mask-Plugin/
+  license:
+    name: MIT License
+    url: https://github.com/igorescobar/jQuery-Mask-Plugin/blob/master/LICENSE
+    gpl-compatible: true
   js:
-    js/jquery.mask.js: {}
-  dependencies:
-    - core/jquery
+    jquery.mask.min.js: { minified: true }
 
 cpf:
   version: 1.x
   js:
     js/cpf.js: {}
   dependencies:
+    - core/jquery
     - core/drupalSettings
+    - cpf/mask_plugin

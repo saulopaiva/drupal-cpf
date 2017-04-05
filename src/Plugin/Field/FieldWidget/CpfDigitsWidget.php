@@ -102,7 +102,6 @@ class CpfDigitsWidget extends CpfWidgetBase {
       '#default_value' => $value,
       '#attached' => [
         'library' => [
-          'cpf/mask_plugin',
           'cpf/cpf',
         ],
         'drupalSettings' => $data,
