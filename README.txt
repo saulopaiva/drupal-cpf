@@ -3,7 +3,8 @@
 
 ## General information
 
-CPF module provides a CPF Field Type and a CPF Form Element for storing CPF number data.
+CPF module provides a CPF Field Type and a CPF Form Element for storing CPF
+number data.
 
 Relevant links:
 - [Project page](https://www.drupal.org/project/cpf)
@@ -12,9 +13,6 @@ Relevant links:
 
 ### Installation
 
-Install like any module, see the
-[Drupal.org handbook](https://www.drupal.org/documentation/install/modules-themes/modules-8)
-for further information.
 
 ### Maintainers
 
