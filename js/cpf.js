@@ -47,7 +47,7 @@
 
       // Calculates the second check digit.
       n[9] = n[8] * 2 + n[7] * 3 + n[6] * 4 + n[5] * 5 + n[4] * 6 + n[3] * 7;
-      n[9] += n[2 ]* 8 + n[1] * 9 + n[0] * 10;
+      n[9] += n[2] * 8 + n[1] * 9 + n[0] * 10;
       n[9] = adjust_digit(n[9]);
 
       // Calculates the second check digit and returns de CPF number.
