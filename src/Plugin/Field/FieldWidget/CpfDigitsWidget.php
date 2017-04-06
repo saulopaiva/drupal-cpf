@@ -108,7 +108,7 @@ class CpfDigitsWidget extends CpfWidgetBase {
       ],
       '#element_validate' => [
         [
-          get_called_class(),
+          $this,
           'validateElement',
         ],
       ],

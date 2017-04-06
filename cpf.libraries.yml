@@ -1,7 +1,7 @@
 mask_plugin:
   remote: https://igorescobar.github.io/jQuery-Mask-Plugin/
   license:
-    name: MIT License
+    name: MIT
     url: https://github.com/igorescobar/jQuery-Mask-Plugin/blob/master/LICENSE
     gpl-compatible: true
   js:

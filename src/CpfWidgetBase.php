@@ -44,6 +44,7 @@ class CpfWidgetBase extends WidgetBase {
    * been entered.
    */
   public function validateElement($element, FormStateInterface $form_state, $form) {
+    $widget = $element['#element_validate'][0][0];
     $element_value = $element['#value'];
 
     if (empty($element_value)) {
@@ -57,7 +58,7 @@ class CpfWidgetBase extends WidgetBase {
     $field_values = array_count_values($field_values);
 
     if ($field_values[$element_value] > 1) {
-      $form_state->setError($element, t('You cannot enter the same CPF numbers.'));
+      $form_state->setError($element, $widget->t('You cannot enter the same CPF numbers.'));
       return;
     }
   }
