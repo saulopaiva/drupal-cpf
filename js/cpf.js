@@ -5,9 +5,11 @@
   Drupal.behaviors.cpf = {
     attach: function (context, settings) {
       // Quick check for the library dependency.
+      var element = null;
+
       if ($.fn.mask) {
         var mask_plugin = settings.cpf.mask_plugin;
-        for (var element in mask_plugin.elements) {
+        for (element in mask_plugin.elements) {
           // Apply masking behavior only when applicable.
           if (mask_plugin.elements[element].mask.length) {
             $('#' + mask_plugin.elements[element].id).mask(mask_plugin.elements[element].mask, {reverse: true});
@@ -18,7 +20,7 @@
       if (settings.cpf.generator) {
         var generator = settings.cpf.generator;
 
-        for (var element in generator.elements) {
+        for (element in generator.elements) {
           if (generator.elements[element].id.length) {
             // Bindes the click event to the cpf number generation link.
             $('#' + generator.elements[element].id, context).on('click', function (e) {
