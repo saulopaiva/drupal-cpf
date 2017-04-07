@@ -51,7 +51,10 @@ class CpfItem extends FieldItemBase {
    * {@inheritdoc}
    */
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
-    $properties['value'] = DataDefinition::create('string');
+    $properties['value'] = DataDefinition::create('string')
+      ->setLabel(t('Digits'))
+      ->setDescription(t('The digits of the CPF.'));
+
     return $properties;
   }
 
