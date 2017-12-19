@@ -43,7 +43,7 @@ class CpfWidgetBase extends WidgetBase {
    * Checks that, in a field with multiple entries, the same CPF numbers have
    * been entered.
    */
-  public function validateElement($element, FormStateInterface $form_state, $form) {
+  public static function validateElement($element, FormStateInterface $form_state, $form) {
     $widget = $element['#element_validate'][0][0];
     $element_value = $element['#value'];
 
